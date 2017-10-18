@@ -36,4 +36,6 @@ $ # pass input from "Sound Blaster" to the Built-in Output:
 $ gothrough -in "Sound Blaster Tactic(3D) Alpha" -out "Built-in Output"
 $ # If a device has an in- and an output, you can pass it to itself:
 $ gothrough -in "Sound Blaster Tactic(3D) Alpha" -out "Sound Blaster Tactic(3D) Alpha"
+$ # Or just use the default devices:
+$ gothrough
 ```

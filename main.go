@@ -35,7 +35,13 @@ func main() {
 	}
 	defer portaudio.Terminate()
 
-	var in, out deviceInfo
+	h, err := portaudio.DefaultHostApi()
+	if err != nil {
+		log.Fatal(err)
+	}
+	in := deviceInfo(*h.DefaultInputDevice)
+	out := deviceInfo(*h.DefaultOutputDevice)
+
 	flag.Var(&in, "in", "Input device")
 	flag.Var(&out, "out", "Input device")
 	sampleRate := flag.Float64("samplerate", 44100, "Sample Rate")
